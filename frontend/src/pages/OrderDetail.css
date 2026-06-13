@@ -1,0 +1,89 @@
+.order-detail-main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #0f766e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.order-detail-main h1 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
+}
+
+.order-detail-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+}
+
+.order-detail-card p {
+  margin: 0 0 0.5rem 0;
+  color: #334155;
+}
+
+.status-badge {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.order-detail-card h3 {
+  font-size: 1rem;
+  margin: 1.25rem 0 0.5rem 0;
+  color: #1e293b;
+}
+
+.order-detail-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-detail-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.order-detail-item:last-child {
+  border-bottom: none;
+}
+
+.order-detail-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.order-detail-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.order-detail-total {
+  margin-top: 1rem !important;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f766e !important;
+}

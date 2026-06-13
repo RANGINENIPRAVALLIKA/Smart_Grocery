@@ -1,0 +1,13 @@
+backend/src/main/resources/application.properties
+
+backend/target/
+*.class
+
+frontend/node_modules/
+frontend/dist/
+
+.vscode/
+.idea/
+
+.env
+*.env

@@ -1,0 +1,135 @@
+.detail-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.detail-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.detail-card-no-image {
+  padding: 0;
+}
+
+.detail-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-category {
+  font-size: 0.85rem;
+  color: #0f766e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem 0;
+}
+
+.detail-info h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+}
+
+.detail-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f766e;
+  margin: 0 0 1rem 0;
+}
+
+.detail-desc {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  flex: 1;
+}
+
+.detail-stock {
+  font-size: 0.9rem;
+  color: #475569;
+  margin: 0 0 1.5rem 0;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.detail-actions .quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.detail-actions .quantity-controls button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: #f1f5f9;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #475569;
+}
+
+.detail-actions .quantity-controls span {
+  min-width: 32px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.detail-actions .wishlist-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #475569;
+}
+
+.detail-actions .wishlist-btn.active {
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+.detail-actions .add-cart-btn {
+  padding: 0.6rem 1.25rem;
+  background: #0f766e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.detail-actions .add-cart-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.detail-not-found {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+}
+
+@media (max-width: 700px) {
+  .detail-card {
+    grid-template-columns: 1fr;
+  }
+}
