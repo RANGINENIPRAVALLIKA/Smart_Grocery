@@ -9,24 +9,27 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+
   const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
+
     try {
       const { data } = await authAPI.login({ email, password });
       login(data);
       navigate(from, { replace: true });
     } catch (err) {
       if (!err.response) {
-        setError('Cannot reach server. Is the backend running at http://localhost:8080? Start it with: cd backend && mvn spring-boot:run');
+        setError('Cannot reach server. Please try again later.');
       } else if (err.response.status === 403) {
-        setError('Access denied. Use the app from http://localhost:5173.');
+        setError('Access denied.');
       } else {
         setError(err.response?.data?.message || 'Invalid email or password');
       }
@@ -40,8 +43,10 @@ export default function Login() {
       <div className="auth-card">
         <h1>Smart Grocery</h1>
         <p className="auth-subtitle">Sign in to your account</p>
+
         <form onSubmit={handleSubmit} className="auth-form">
           {error && <div className="auth-error">{error}</div>}
+
           <input
             type="email"
             placeholder="Email"
@@ -50,6 +55,7 @@ export default function Login() {
             required
             autoComplete="email"
           />
+
           <input
             type="password"
             placeholder="Password"
@@ -58,11 +64,20 @@ export default function Login() {
             required
             autoComplete="current-password"
           />
-          <p className="auth-hint">Password is hidden (dots) for security. Type normally to login.</p>
-          <button type="submit" className="auth-btn" disabled={loading}>
+
+          <p className="auth-hint">
+            Password is hidden (dots) for security. Type normally to login.
+          </p>
+
+          <button
+            type="submit"
+            className="auth-btn"
+            disabled={loading}
+          >
             {loading ? 'Signing in...' : 'Login'}
           </button>
         </form>
+
         <p className="auth-switch">
           Don't have an account? <Link to="/register">Register</Link>
         </p>
